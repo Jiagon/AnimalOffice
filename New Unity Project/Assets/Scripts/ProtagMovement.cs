@@ -13,7 +13,7 @@ public class ProtagMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {if (Input.GetKey("a"))
+	void Update () {if (Input.GetKey("a") || (Input.GetKey(KeyCode.LeftArrow)))
         {
             this.transform.Translate(-speed, 0, 0); // character moves left and right
             if (facingRight)
@@ -21,7 +21,7 @@ public class ProtagMovement : MonoBehaviour {
                 Flip();
             }
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") || (Input.GetKey(KeyCode.RightArrow)))
         {
             this.transform.Translate(speed, 0, 0); // character moves left and right
             if (!facingRight)
