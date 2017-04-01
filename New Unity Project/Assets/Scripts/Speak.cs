@@ -2,46 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum kpState
+{
+    down,
+    up,
+}
+
 public class Speak : MonoBehaviour {
 
     public GameObject speaker1 = null;
     public GameObject speaker2 = null;
 
     private bool displayMessage = false;
+    private kpState keyState = kpState.up;
+    private kpState previousKeyState = kpState.up;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(speaker1 != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            ChangeDisplayMessage();
+            /*if (speaker1 != null)
             {
-                displayMessage = true;
+                ChangeDisplayMessage();
             }
-        }
-        if (speaker2 != null)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            else if (speaker2 != null)
             {
-                displayMessage = true;
-            }
-        }
-
-        if (displayMessage)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                displayMessage = false;
-            }
-        }
-
-        while (!Input.GetKeyUp(KeyCode.Space)) ;
-        {
-
+                ChangeDisplayMessage();
+            }*/
         }
 
     }
@@ -50,7 +43,12 @@ public class Speak : MonoBehaviour {
     {
         if(displayMessage)
         {
-            GUI.Label(new Rect(10f, 10f, 100f, 20f), "Testing");
+            GUI.Box(new Rect(Screen.width / 2, Screen.height - 50f, 100f, 40f), "Testing");
         }
+    }
+
+    void ChangeDisplayMessage()
+    {
+        displayMessage = !displayMessage;
     }
 }

@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/ZachScene1.unity
-=======
 - path: Assets/Sam_test scene.unity
->>>>>>> 561ae21b599ae1676f4c1fba9a763cdcb2847765
   isLoaded: 1
   isActive: 1
