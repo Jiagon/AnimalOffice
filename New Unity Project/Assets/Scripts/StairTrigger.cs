@@ -17,8 +17,9 @@ public class StairTrigger : MonoBehaviour {
 	}
 
     // collision
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("AH I'VE BEEN HIT CURSES RED BARON");
         if (collision.gameObject.name == "Player")
         {
             Destroy(collision.gameObject);
