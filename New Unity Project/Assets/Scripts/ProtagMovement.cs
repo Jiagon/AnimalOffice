@@ -29,6 +29,30 @@ public class ProtagMovement : MonoBehaviour {
                 Flip();
             }
         }
+
+        if(this.transform.position.x > 10 && this.transform.position.x < 15)
+        {
+            this.transform.Translate(48, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 60 && this.transform.position.x < 65)
+        {
+            this.transform.Translate(-55, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 40 && this.transform.position.x < 45)
+        {
+            this.transform.Translate(55, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 92 && this.transform.position.x < 97)
+        {
+            this.transform.Translate(-50, 0, 0);
+            Flip();
+        }
     }
 
     // flips player sprite depending on direction moving
