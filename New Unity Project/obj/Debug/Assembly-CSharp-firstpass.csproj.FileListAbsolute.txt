@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\Temp\bin\Debug\UnityEditor.dll
@@ -27,3 +28,34 @@
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.dll
 \\banner.main.ad.rit.edu\students\zrm2647\IGMProfile\Documents\AnimalOffice\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.pdb
+=======
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEditor.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.Analytics.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.HoloLens.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.Networking.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.UI.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.VR.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Mono.Cecil.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Unity.SerializationLogic.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Unity.DataContract.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Unity.UNetWeaver.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Unity.CecilTools.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEditor.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.UI.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.Networking.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.PlaymodeTestsRunner.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.Analytics.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.HoloLens.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\Temp\bin\Debug\UnityEngine.VR.xml
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.dll
+Z:\IGMProfile\Documents\_GAME JAM\2017 Hero Jam\New Unity Project\obj\Debug\Assembly-CSharp-firstpass.pdb
+>>>>>>> 38fb11420ee9e1a18fce8b62ff83545463e45d35
