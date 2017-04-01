@@ -9,18 +9,77 @@ using System.IO;
 public class GameManager : MonoBehaviour {
 
     public string fileName;
+    public const int days = 13;
 
-    private ArrayList entries = new ArrayList();
+    private List<string> entries = new List<string>();
+    private List<List<string>> dialogues = new List<List<string>>();
 
     // Use this for initialization
     void Start()
     {
+        // Add a new dialog for each day - 13 days in total, days can be changed later
+        for(int i = 0; i < days; i++)
+        {
+            dialogues.Add(new List<string>());
+        }
+
         if (Load())
         {
             for (int i = 0; i < entries.Count; i++)
             {
-                Debug.Log(entries[i]);
-                Debug.Log(entries[i].ToString().Substring(0, 1));
+                switch(entries[i].ToString().Substring(0, 1))
+                {
+                    case "1":
+                        dialogues[0].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "2":
+                        dialogues[1].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "3":
+                        dialogues[2].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "4":
+                        dialogues[3].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "5":
+                        dialogues[4].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "6":
+                        dialogues[5].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "7":
+                        dialogues[6].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "8":
+                        dialogues[7].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "9":
+                        dialogues[8].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "A":
+                        dialogues[9].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "B":
+                        dialogues[10].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "C":
+                        dialogues[11].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    case "D":
+                        dialogues[12].Add(entries[i].ToString().Substring(2, entries[i].Length - 2));
+                        break;
+                    default:
+                        Debug.Log("Index range out of ");
+                        break;
+                }
+            }
+            for(int i = 0; i < dialogues.Count; i++)
+            {
+                for (int j = 0; j < dialogues[i].Count; j++)
+                {
+                    Debug.Log(dialogues[i][j].ToString());
+                }
+
             }
         }
         else
