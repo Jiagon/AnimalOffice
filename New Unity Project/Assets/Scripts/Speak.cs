@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum kpState
-{
-    down,
-    up,
-}
-
 public class Speak : MonoBehaviour {
 
-    public GameObject speaker1 = null;
-    public GameObject speaker2 = null;
+    public GameObject player;
+    public string[] dialogues;
 
     private bool displayMessage = false;
-    private kpState keyState = kpState.up;
-    private kpState previousKeyState = kpState.up;
+    private int currMessage = 0;
 
     // Use this for initialization
     void Start () {
@@ -26,15 +19,15 @@ public class Speak : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeDisplayMessage();
-            /*if (speaker1 != null)
+            if(currMessage == 0 && Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) < 1.0f)
             {
                 ChangeDisplayMessage();
             }
-            else if (speaker2 != null)
-            {
-                ChangeDisplayMessage();
-            }*/
+        }
+        if (Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) > 1.0f)
+        {
+            displayMessage = false;
+            currMessage = 0;
         }
 
     }
