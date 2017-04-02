@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour {
             for(int i = 0; i < currentAnimals.Count; i++)
             {
                 int r = UnityEngine.Random.Range(0, 3);
-                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(-4.5f, 4.5f), floors[0], 0), Quaternion.identity));
+                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(-4.5f, 4.5f), floors[r], 0), Quaternion.identity));
             }
 
             // Adds dialog to animals during specific days

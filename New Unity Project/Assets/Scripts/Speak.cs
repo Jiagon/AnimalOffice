@@ -10,6 +10,7 @@ public class Speak : MonoBehaviour {
     private bool canSpeak = false;
     private bool displayMessage = false;
     private int currMessage = 0;
+    private float playerX;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +34,12 @@ public class Speak : MonoBehaviour {
                 currMessage = 0;
             }
         }
+        if (displayMessage)
+        {
+            Debug.Log(player.transform.position.x);
+            player.transform.position.Set(playerX, player.transform.position.y, player.transform.position.z);
+            Debug.Log(player.transform.position.x);
+        }
 
     }
 
@@ -47,6 +54,14 @@ public class Speak : MonoBehaviour {
     void ChangeDisplayMessage()
     {
         displayMessage = !displayMessage;
+        if (displayMessage)
+        {
+            player.GetComponent<ProtagMovement>().setFrozen(true);
+        }
+        else
+        {
+            player.GetComponent<ProtagMovement>().setFrozen(false);
+        }
     }
     // PROPERTIES - Determines if a character is allowed to speak
     public bool getCanSpeak()

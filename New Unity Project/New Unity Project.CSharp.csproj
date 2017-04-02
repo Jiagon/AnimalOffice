@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BasicMovement.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\FreezeMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ProtagMovement.cs" />
     <Compile Include="Assets\Scripts\Speak.cs" />
