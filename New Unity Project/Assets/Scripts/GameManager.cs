@@ -159,6 +159,7 @@ public class GameManager : MonoBehaviour {
                         break;
                 }
                 Vector3 position = floor.transform.position;
+                position.y += 1.0f;
                 animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(position.x-4.5f, position.x + 4.5f), position.y, position.z), Quaternion.identity));
             }
 
