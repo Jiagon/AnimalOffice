@@ -15,9 +15,17 @@ public class ProtagMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
         if (!frozen)
         {
             if (Input.GetKey("a") || (Input.GetKey(KeyCode.LeftArrow)))
+=======
+
+        if ((Input.GetKey("a") || (Input.GetKey(KeyCode.LeftArrow))) && this.transform.position.x > -14) // position > -14 prevents player moving too far left
+        {
+            this.transform.Translate(-speed, 0, 0); // character moves left
+            if (facingRight)
+>>>>>>> 4d6e4d8110b8cef3cecbff81e4f283d16db16f45
             {
                 this.transform.Translate(-speed, 0, 0); // character moves left and right
                 if (facingRight)
@@ -25,7 +33,15 @@ public class ProtagMovement : MonoBehaviour {
                     Flip();
                 }
             }
+<<<<<<< HEAD
             if (Input.GetKey("d") || (Input.GetKey(KeyCode.RightArrow)))
+=======
+        }
+        if ((Input.GetKey("d") || (Input.GetKey(KeyCode.RightArrow))) && this.transform.position.x < 120) // position < 120 prevents player moving too far right
+        {
+            this.transform.Translate(speed, 0, 0); // character moves right
+            if (!facingRight)
+>>>>>>> 4d6e4d8110b8cef3cecbff81e4f283d16db16f45
             {
                 this.transform.Translate(speed, 0, 0); // character moves left and right
                 if (!facingRight)
@@ -34,6 +50,7 @@ public class ProtagMovement : MonoBehaviour {
                 }
             }
 
+<<<<<<< HEAD
             if (this.transform.position.x > 10 && this.transform.position.x < 15)
             {
                 this.transform.Translate(48, 0, 0);
@@ -57,6 +74,30 @@ public class ProtagMovement : MonoBehaviour {
                 this.transform.Translate(-50, 0, 0);
                 Flip();
             }
+=======
+        if(this.transform.position.x > 12 && this.transform.position.x < 16) //floor 1 -> floor 2
+        {
+            this.transform.Translate(51, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 65 && this.transform.position.x < 69) // floor 2 -> floor 1
+        {
+            this.transform.Translate(-55, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 37 && this.transform.position.x < 41) // floor 2 -> floor 3
+        {
+            this.transform.Translate(56, 0, 0);
+            Flip();
+        }
+
+        if (this.transform.position.x > 89 && this.transform.position.x < 93) // floor 3 -> floor 2
+        {
+            this.transform.Translate(-49, 0, 0);
+            Flip();
+>>>>>>> 4d6e4d8110b8cef3cecbff81e4f283d16db16f45
         }
     }
 
