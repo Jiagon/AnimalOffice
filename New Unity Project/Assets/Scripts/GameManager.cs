@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 
     // Will be used to store the instances of all animals currently existing within the day
     private List<GameObject> currentAnimals = new List<GameObject>();
+    private List<GameObject> animalInstances = new List<GameObject>();
 
     // Used as input for prefab models
     public GameObject player;
@@ -33,14 +34,13 @@ public class GameManager : MonoBehaviour {
     // Will be used to store objects to reference them when creating instances
     private static Dictionary<string, GameObject> animals = new Dictionary<string, GameObject>();
 
+    private float[] floors = new float[3];
 
     // Reads in external .txt file and parses by line
     private List<string> entries = new List<string>();
     // Further parses entries by first hex digit appearing in each line
     private List<List<string>> dialogues = new List<List<string>>();
-
-    private Speak s1, s2;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -57,7 +57,9 @@ public class GameManager : MonoBehaviour {
         animals["cow"] = cow;
         animals["cat"] = cat;
 
-        Debug.Log("COW: " + animals["cow"]);
+        floors[0] = -0.72f;
+        floors[1] = 0.20f;
+        floors[2] = 1.12f;
 
         // Add a new dialog for each day - 13 days in total, days can be changed later
         for (int i = 0; i < days; i++)
@@ -115,16 +117,7 @@ public class GameManager : MonoBehaviour {
                         break;
                 }
             }
-
-            // DEBUG LOG - DELETE LATER
-            for(int i = 0; i < dialogues.Count; i++)
-            {
-                for (int j = 0; j < dialogues[i].Count; j++)
-                {
-                    Debug.Log(dialogues[i][j].ToString());
-                }
-
-            }
+            
         }
         else
         {
@@ -150,10 +143,11 @@ public class GameManager : MonoBehaviour {
 
             // Adds animals to the currentAnimals() list, signifying which animals and how many will be created
             addAnimals();
-
+            
             for(int i = 0; i < currentAnimals.Count; i++)
             {
-                Instantiate(currentAnimals[i], new Vector3(0, 0, 0), Quaternion.identity);
+                int r = UnityEngine.Random.Range(0, 3);
+                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(-4.5f, 4.5f), floors[0], 0), Quaternion.identity));
             }
 
             // Adds dialog to animals during specific days
@@ -212,7 +206,6 @@ public class GameManager : MonoBehaviour {
         // 4 Cows
         // 1 Cat
         // PATTERN: Every first 3 characters speak per day
-        Debug.Log("HORSE: " + animals["horse"]);
         currentAnimals.Add(horse);
         currentAnimals.Add(donkey);
         currentAnimals.Add(raven);
@@ -344,8 +337,11 @@ public class GameManager : MonoBehaviour {
             animal2 = "pig";
         }
         int index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal1]);
-        s1 = currentAnimals[index].AddComponent<Speak>();
+        animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
+        animalInstances[index].GetComponent<Speak>().setPlayer(player);
+
         index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal2]);
-        s2 = currentAnimals[index].AddComponent<Speak>();
+        animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
+        animalInstances[index].GetComponent<Speak>().setPlayer(player);
     }
 }

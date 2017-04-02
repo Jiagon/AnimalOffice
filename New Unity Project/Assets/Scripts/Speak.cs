@@ -7,6 +7,7 @@ public class Speak : MonoBehaviour {
     public GameObject player;
     public string[] dialogues;
 
+    private bool canSpeak = false;
     private bool displayMessage = false;
     private int currMessage = 0;
 
@@ -17,17 +18,20 @@ public class Speak : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canSpeak)
         {
-            if(currMessage == 0 && Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) < 1.0f)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                ChangeDisplayMessage();
+                if (currMessage == 0 && Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) < 0.5f)
+                {
+                    ChangeDisplayMessage();
+                }
             }
-        }
-        if (Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) > 1.0f)
-        {
-            displayMessage = false;
-            currMessage = 0;
+            if (Mathf.Abs(Mathf.Abs(player.transform.position.x) - Mathf.Abs(transform.localPosition.x)) > 1.0f)
+            {
+                displayMessage = false;
+                currMessage = 0;
+            }
         }
 
     }
@@ -43,5 +47,25 @@ public class Speak : MonoBehaviour {
     void ChangeDisplayMessage()
     {
         displayMessage = !displayMessage;
+    }
+    // PROPERTIES - Determines if a character is allowed to speak
+    public bool getCanSpeak()
+    {
+        return canSpeak;
+    }
+
+    public void setCanSpeak(bool value)
+    {
+        canSpeak = value;
+    }
+
+    public GameObject getPlayer()
+    {
+        return player;
+    }
+
+    public void setPlayer(GameObject p)
+    {
+        player = p;
     }
 }
