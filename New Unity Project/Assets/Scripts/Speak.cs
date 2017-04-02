@@ -12,6 +12,7 @@ public class Speak : MonoBehaviour {
     private int currMessage = 0;
     private float playerX;
     private string message;
+    private bool hasSpoken = false;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +48,7 @@ public class Speak : MonoBehaviour {
         if(displayMessage)
         {
             GUI.Box(new Rect(0, Screen.height - 100f, Screen.width, 40f), message);
+            hasSpoken = true;
         }
     }
 
@@ -86,5 +88,15 @@ public class Speak : MonoBehaviour {
     public void setMessage(string msg)
     {
         message = msg;
+    }
+    
+    public void setHasSpoken(bool value)
+    {
+        hasSpoken = value;
+    }
+
+    public bool getHasSpoken()
+    {
+        return hasSpoken;
     }
 }

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour {
     // Further parses entries by first hex digit appearing in each line
     private List<List<string>> dialogues = new List<List<string>>();
     private int currDialog = 0;
+    private GameObject[] speakingAnimals = new GameObject[2];
     
     // Use this for initialization
     void Start()
@@ -135,7 +136,7 @@ public class GameManager : MonoBehaviour {
                 int numAnimals = currentAnimals.Count;
                 for (int i = 0; i < numAnimals; i++)
                 {
-                    Destroy(currentAnimals[i]);
+                    Destroy(currentAnimals[i].gameObject);
                 }
                 currentAnimals.Clear();
             }
@@ -176,6 +177,10 @@ public class GameManager : MonoBehaviour {
 
             currDialog = 0;
             prevDay = currDay;
+        }
+        if (speakingAnimals[0].GetComponent<Speak>().getHasSpoken() && speakingAnimals[1].GetComponent<Speak>().getHasSpoken())
+        {
+            currDay++;
         }
     }
 
@@ -358,14 +363,21 @@ public class GameManager : MonoBehaviour {
             animal1 = "dog";
             animal2 = "pig";
         }
+        Debug.Log(animal1);
+        Debug.Log(animal2);
         int index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal1]);
         animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
         animalInstances[index].GetComponent<Speak>().setMessage(dialogues[currDay - 1][0]);
         animalInstances[index].GetComponent<Speak>().setPlayer(player);
 
+        speakingAnimals[0] = animalInstances[index];
+
         index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal2]);
         animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
         animalInstances[index].GetComponent<Speak>().setMessage(dialogues[currDay - 1][0]);
         animalInstances[index].GetComponent<Speak>().setPlayer(player);
+
+        speakingAnimals[1] = animalInstances[index];
+
     }
 }
