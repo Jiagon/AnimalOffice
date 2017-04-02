@@ -11,6 +11,7 @@ public class Speak : MonoBehaviour {
     private bool displayMessage = false;
     private int currMessage = 0;
     private float playerX;
+    private string message;
 
     // Use this for initialization
     void Start () {
@@ -36,9 +37,7 @@ public class Speak : MonoBehaviour {
         }
         if (displayMessage)
         {
-            Debug.Log(player.transform.position.x);
             player.transform.position.Set(playerX, player.transform.position.y, player.transform.position.z);
-            Debug.Log(player.transform.position.x);
         }
 
     }
@@ -47,7 +46,7 @@ public class Speak : MonoBehaviour {
     {
         if(displayMessage)
         {
-            GUI.Box(new Rect(Screen.width / 2, Screen.height - 50f, 100f, 40f), "Testing");
+            GUI.Box(new Rect(0, Screen.height - 100f, Screen.width, 40f), message);
         }
     }
 
@@ -82,5 +81,10 @@ public class Speak : MonoBehaviour {
     public void setPlayer(GameObject p)
     {
         player = p;
+    }
+
+    public void setMessage(string msg)
+    {
+        message = msg;
     }
 }

@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
     private List<string> entries = new List<string>();
     // Further parses entries by first hex digit appearing in each line
     private List<List<string>> dialogues = new List<List<string>>();
+    private int currDialog = 0;
     
     // Use this for initialization
     void Start()
@@ -129,7 +130,7 @@ public class GameManager : MonoBehaviour {
         // If a new day occurs, delete all instances of animals, clear the list, create new instances of animals, and progress the prevDay to the currDay
         if(prevDay != currDay)
         {
-            if (currentAnimals.Count > 0)
+            if (currDay != 1)
             {
                 int numAnimals = currentAnimals.Count;
                 for (int i = 0; i < numAnimals; i++)
@@ -159,13 +160,21 @@ public class GameManager : MonoBehaviour {
                         break;
                 }
                 Vector3 position = floor.transform.position;
-                position.y += 1.0f;
-                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(position.x-4.5f, position.x + 4.5f), position.y, position.z), Quaternion.identity));
+                position.y += 1.2f;
+                position.z -= 1.0f;
+                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(position.x - 4.5f, position.x + 4.5f), position.y, position.z), Quaternion.identity));
+                Vector3.Scale(animalInstances[i].transform.localScale, new Vector3(0.23f, 0.23f, 0.23f));
             }
 
             // Adds dialog to animals during specific days
             assignDialog();
 
+            if(currDay != 1)
+            {
+                currDay++;
+            }
+
+            currDialog = 0;
             prevDay = currDay;
         }
     }
@@ -351,10 +360,12 @@ public class GameManager : MonoBehaviour {
         }
         int index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal1]);
         animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
+        animalInstances[index].GetComponent<Speak>().setMessage(dialogues[currDay - 1][0]);
         animalInstances[index].GetComponent<Speak>().setPlayer(player);
 
         index = System.Array.IndexOf(currentAnimals.ToArray(), animals[animal2]);
         animalInstances[index].GetComponent<Speak>().setCanSpeak(true);
+        animalInstances[index].GetComponent<Speak>().setMessage(dialogues[currDay - 1][0]);
         animalInstances[index].GetComponent<Speak>().setPlayer(player);
     }
 }
