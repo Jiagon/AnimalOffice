@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour {
     // Will be used to store objects to reference them when creating instances
     private static Dictionary<string, GameObject> animals = new Dictionary<string, GameObject>();
 
-    private float[] floors = new float[3];
+    public GameObject floor1;
+    public GameObject floor2;
+    public GameObject floor3;
 
     // Reads in external .txt file and parses by line
     private List<string> entries = new List<string>();
@@ -56,10 +58,6 @@ public class GameManager : MonoBehaviour {
         animals["hen"] = hen;
         animals["cow"] = cow;
         animals["cat"] = cat;
-
-        floors[0] = -0.72f;
-        floors[1] = 0.20f;
-        floors[2] = 1.12f;
 
         // Add a new dialog for each day - 13 days in total, days can be changed later
         for (int i = 0; i < days; i++)
@@ -147,7 +145,21 @@ public class GameManager : MonoBehaviour {
             for(int i = 0; i < currentAnimals.Count; i++)
             {
                 int r = UnityEngine.Random.Range(0, 3);
-                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(-4.5f, 4.5f), floors[r], 0), Quaternion.identity));
+                GameObject floor;
+                switch (r)
+                {
+                    case 1:
+                        floor = floor1;
+                        break;
+                    case 2:
+                        floor = floor2;
+                        break;
+                    default:
+                        floor = floor3;
+                        break;
+                }
+                Vector3 position = floor.transform.position;
+                animalInstances.Add(Instantiate(currentAnimals[i], new Vector3(UnityEngine.Random.Range(position.x-4.5f, position.x + 4.5f), position.y, position.z), Quaternion.identity));
             }
 
             // Adds dialog to animals during specific days

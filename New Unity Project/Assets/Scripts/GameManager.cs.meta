@@ -1,10 +1,24 @@
 fileFormatVersion: 2
 guid: a3265ec88a854b74caa06cac9d3a08a6
-timeCreated: 1491056079
+timeCreated: 1491099951
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - pig: {fileID: 1562869103300586, guid: 5b87fd060a44b68478a0cf6baaaf702d, type: 2}
+  - human: {fileID: 1241932161598014, guid: 62f12c4df49d20f44896c39fdc59e371, type: 2}
+  - horse: {fileID: 1024469427157738, guid: cb219a1411e75be4aa234e1d57ef7b38, type: 2}
+  - donkey: {fileID: 1509845595099548, guid: 1430c74d8a615d4418775c867c3e8165, type: 2}
+  - raven: {fileID: 1026941249531436, guid: 604a4fbca9e324e439f82750f17333bd, type: 2}
+  - goat: {fileID: 1749310014275838, guid: 697aadff62d82fd44aa43ebf2b5e4a81, type: 2}
+  - dog: {fileID: 1166236543866630, guid: 3349276687eedee44a5c69cddcd9b895, type: 2}
+  - hen: {fileID: 1791592046745872, guid: 04fabc9906718c24295d7dce9eea49d8, type: 2}
+  - cow: {fileID: 1586166994819852, guid: d302688d720cba44282d41654871056a, type: 2}
+  - cat: {fileID: 1605092004868360, guid: 3f817dab36cd0894e84a3f9014c1463c, type: 2}
+  - floor1: {instanceID: 0}
+  - floor2: {instanceID: 0}
+  - floor3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
